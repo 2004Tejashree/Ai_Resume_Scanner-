@@ -19,10 +19,12 @@ const Login = ({ onLogin }) => {
       alert("Please enter valid credentials.");
     }
   };
-  
 
   return (
-    <div className="login-container">
+    <div className="login">
+      <header className="login-header">
+        <h1>Welcome to AI Resume Scanner</h1>
+      </header>
       <h2>Login</h2>
       <form onSubmit={handleLogin}>
         <input 
@@ -41,6 +43,9 @@ const Login = ({ onLogin }) => {
         />
         <button type="submit">Login</button>
       </form>
+      <footer className="login-footer">
+        <p>&copy; 2023 AI Resume Scanner. All rights reserved.</p>
+      </footer>
     </div>
   );
 };

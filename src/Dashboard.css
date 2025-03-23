@@ -1,0 +1,131 @@
+/* General Page Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f7fc;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* Dashboard Container */
+.dashboard {
+  max-width: 800px;
+  margin: 40px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading */
+h2 {
+  color: #333;
+}
+
+/* Job Specifications Input */
+.tag-input-container {
+  margin-top: 20px;
+}
+
+.tag-input-container input {
+  width: 70%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.tag {
+  background-color: #007bff;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.tag button {
+  background: none;
+  border: none;
+  color: white;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+/* File Upload Styling */
+.file-upload-container {
+  margin-top: 20px;
+  padding: 15px;
+  border: 2px dashed #007bff;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+.file-upload-container input {
+  display: none;
+}
+
+.file-upload-container label {
+  display: inline-block;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.file-upload-container label:hover {
+  background-color: #0056b3;
+}
+
+/* Screening Results Section */
+.results {
+  margin-top: 30px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.results pre {
+  text-align: left;
+  font-size: 14px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* Logout Button */
+button.logout {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button.logout:hover {
+  background-color: darkred;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .dashboard {
+    width: 90%;
+  }
+
+  .tag-input-container input {
+    width: 100%;
+  }
+}

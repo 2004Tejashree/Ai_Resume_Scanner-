@@ -1,39 +1,38 @@
 import React, { useState } from "react";
+import UploadResume from "./UploadResume";
+import TagInput from "./TagInput";
 import "./Dashboard.css";
+//import "./Dashboard.html"
 
 const Dashboard = ({ onLogout }) => {
-  const [selectedFile, setSelectedFile] = useState(null);
-
-  const handleFileChange = (event) => {
-    setSelectedFile(event.target.files[0]);
-  };
-
-  const handleUpload = () => {
-    if (selectedFile) {
-      alert(`Uploaded: ${selectedFile.name}`);
-    } else {
-      alert("Please select a file first.");
-    }
-  };
+  const [jobTags, setJobTags] = useState([]);
+  const [resumeData, setResumeData] = useState(null);
 
   return (
-    <div className="dashboard-container">
-      <h2>Welcome to Resume Screening Dashboard</h2>
       
-      {/* Resume Upload Section */}
-      <div className="upload-section">
-        <input type="file" onChange={handleFileChange} />
-        <button onClick={handleUpload}>Upload Resume</button>
-      </div>
+    <div className="dashboard">
+      <h2>Welcome to Resume Screening Dashboard</h2>
 
-      {/* Screening Results (Placeholder) */}
-      <div className="results-section">
+      {/* Job Specifications Input */}
+      <TagInput jobTags={jobTags} setJobTags={setJobTags} />
+
+      {/* Resume Upload */}
+      <UploadResume setResumeData={setResumeData} />
+
+      {/* Display Screening Results */}
+      <div className="results">
         <h3>Screening Results</h3>
-        <p>No resumes uploaded yet.</p>
+        {resumeData ? (
+          <pre>{resumeData}</pre>
+        ) : (
+          <p>No resumes uploaded yet.</p>
+        )}
       </div>
 
       {/* Logout Button */}
-      <button className="logout-button" onClick={onLogout}>Logout</button>
+      <button onClick={onLogout} style={{ backgroundColor: "red", color: "white" }}>
+        Logout
+      </button>
     </div>
   );
 };
